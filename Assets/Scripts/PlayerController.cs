@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject firstZone = null;
     Coroutine attack = null;
+
+    public int lives = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 pos = firstZone.transform.position;
         Vector3 add = new Vector3(0, attackPrefab.GetComponent<RectTransform>().sizeDelta[1] * (range - 1), 0);
-        Debug.Log("pos: " + pos + " | add: " + add + " | range: " + range);
+        //Debug.Log("pos: " + pos + " | add: " + add + " | range: " + range);
         return pos + add;
     }
     private IEnumerator DoAttack()
@@ -73,6 +75,16 @@ public class PlayerController : MonoBehaviour
             range = 0;
             yield return null;
             actualState = State.Default;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<EnemyController>() != null)
+        {
+            Destroy(other.gameObject);
+            lives --;
+            if (lives <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("DeadScreen");
+        }
     }
 
 }
