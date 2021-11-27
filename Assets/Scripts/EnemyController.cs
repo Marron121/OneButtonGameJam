@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public List<Transform> directions;
-
+    public bool canShoot;
 
     // Walk speed that can be set in Inspector
     [SerializeField]
@@ -48,6 +48,12 @@ public class EnemyController : MonoBehaviour
                 waypointIndex += 1;
             }
         }
+    }
+
+    public void ShootBullet()
+    {
+        if (canShoot)
+        {}
     }
 
 }
