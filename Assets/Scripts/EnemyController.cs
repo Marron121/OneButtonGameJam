@@ -7,12 +7,10 @@ public class EnemyController : MonoBehaviour
     public List<Transform> directions;
     public bool canShoot;
 
-    // Walk speed that can be set in Inspector
-    [SerializeField]
-    private float moveSpeed = 2f;
+    public float moveSpeed = 2f;
 
-    // Index of current waypoint from which Enemy walks
-    // to the next one
+    private bool canMove = true;
+
     private int waypointIndex = 0;
     // Start is called before the first frame update
     void Start()
@@ -29,25 +27,32 @@ public class EnemyController : MonoBehaviour
     // Method that actually make Enemy walk
     private void Move()
     {
-        // If Enemy didn't reach last waypoint it can move
-        // If enemy reached last waypoint then it stops
-        if (waypointIndex <= directions.Count - 1)
+        if (waypointIndex <= directions.Count - 1 && canMove)
         {
-
-            // Move Enemy from current waypoint to the next one
-            // using MoveTowards method
             transform.position = Vector2.MoveTowards(transform.position,
                directions[waypointIndex].transform.position,
                moveSpeed * Time.deltaTime);
-
-            // If Enemy reaches position of waypoint he walked towards
-            // then waypointIndex is increased by 1
-            // and Enemy starts to walk to the next waypoint
             if (transform.position == directions[waypointIndex].transform.position)
             {
                 waypointIndex += 1;
             }
         }
+        else if (waypointIndex > directions.Count -1)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void StopMovement(float t)
+    {
+        StartCoroutine(StopForATime(t));
+    }
+
+    private IEnumerator StopForATime(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
     }
 
     public void ShootBullet()

@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class WaypointController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public float newVelocity;
+   public bool changeVelocity = false;
+   public bool waitHere = false;
+   public float timeToWait;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private void OnTriggerEnter2D(Collider2D other)
+   {
+       if (other.GetComponent<EnemyController>())
+       {
+           if (changeVelocity)
+           {
+               other.GetComponent<EnemyController>().moveSpeed = newVelocity;
+           }
+           if (waitHere)
+           {
+               other.GetComponent<EnemyController>().StopMovement(timeToWait);
+           }
+       }
+   }
 }
