@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
+    public string currentScene;
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         StartCoroutine(CheckEnemies());
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Enemy") Destroy(col.gameObject);
+        if (col.tag == "Enemy")
+        {
+            Destroy(col.gameObject);
+            if (currentScene == "Tutorial") FindObjectOfType<TutoManager>().EnemyKilled();
+        }
+
     }
     private IEnumerator CheckEnemies()
     {

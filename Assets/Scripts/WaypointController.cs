@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class WaypointController : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class WaypointController : MonoBehaviour
    public bool waitHere = false;
    public float timeToWait;
    public bool shoot;
+
+   public bool textAppear = false;
+
+   public GameObject text;
 
    public List<EnemyController> puedeDetectar = new List<EnemyController>();
 
@@ -30,6 +36,7 @@ public class WaypointController : MonoBehaviour
            {
                other.GetComponent<EnemyController>().ShootBullet();
            }
+           if(textAppear) text.SetActive(true);
        }
    }
 }
