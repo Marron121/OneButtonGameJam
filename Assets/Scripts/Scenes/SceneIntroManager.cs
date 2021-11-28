@@ -27,7 +27,7 @@ public class SceneIntroManager : SceneController
         }
         else
         {
-            base.LoadScene("Level1Scene");
+            base.LoadScene("Tutorial");
         }
     }
 }
