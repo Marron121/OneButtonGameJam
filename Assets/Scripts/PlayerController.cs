@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject attackPrefab = null;
 
+    public SpriteRenderer actualSprite;
+
+    public Sprite[] sprites;
+
     [SerializeField]
     GameObject firstZone = null;
     Coroutine attack = null;
@@ -32,6 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         attack = null;
         actualState = State.Default;
+        actualSprite.sprite = sprites[0];
     }
 
     // Update is called once per frame
@@ -54,16 +59,17 @@ public class PlayerController : MonoBehaviour
         while (actualState == State.Holding)
         {
             range++;
-            Debug.Log("range: " + range);
+            if (range > 3) range = 3;
+            actualSprite.sprite = sprites[range];
             yield return new WaitForSeconds(timeToCharge);
         }
+        yield return null;
     }
 
     private Vector3 spawnAttackPos()
     {
         Vector3 pos = firstZone.transform.position;
         Vector3 add = new Vector3(0, attackPrefab.GetComponent<RectTransform>().sizeDelta[1] * (range - 1), 0);
-        //Debug.Log("pos: " + pos + " | add: " + add + " | range: " + range);
         return pos + add;
     }
     private IEnumerator DoAttack()
@@ -73,8 +79,9 @@ public class PlayerController : MonoBehaviour
             StopCoroutine(attack);
             attack = null;
             range = 0;
-            yield return null;
             actualState = State.Default;
+            actualSprite.sprite = sprites[0];
+            yield return null;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -84,7 +91,20 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             lives --;
             if (lives <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("DeadScreen");
+            else StartCoroutine(Damaged());
         }
+    }
+
+    private IEnumerator Damaged()
+    {
+        actualSprite.color = new Color(1,1,1,0);
+        yield return new WaitForSeconds(0.25f);
+        actualSprite.color = new Color(1,1,1,1);
+        yield return new WaitForSeconds(0.25f);
+        actualSprite.color = new Color(1,1,1,0);
+        yield return new WaitForSeconds(0.25f);
+        actualSprite.color = new Color(1,1,1,1);
+        yield return null;
     }
 
 }

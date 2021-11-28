@@ -99,6 +99,12 @@ MonoBehaviour:
   actualState: 0
   timeToCharge: 1
   attackPrefab: {fileID: 0}
+  actualSprite: {fileID: 1340148592922561598}
+  sprites:
+  - {fileID: 4037239090180440262, guid: 4c575116ab122944da28e053c0f834e5, type: 3}
+  - {fileID: -6000509079428323337, guid: 4c575116ab122944da28e053c0f834e5, type: 3}
+  - {fileID: -2940555323812956173, guid: 4c575116ab122944da28e053c0f834e5, type: 3}
+  - {fileID: 8475498089052762067, guid: 4c575116ab122944da28e053c0f834e5, type: 3}
   firstZone: {fileID: 0}
   lives: 3
 --- !u!61 &6721251035171988172

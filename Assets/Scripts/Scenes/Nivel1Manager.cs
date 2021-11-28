@@ -33,23 +33,4 @@ public class Nivel1Manager : SceneController
             }
         }
     }
-
-    /*
-    IEnumerator Spawn()
-    {
-        Debug.Log(spawnedEnemies);
-        if (spawnedEnemies < enemigosASpawnear.Count)
-        {
-            yield return new WaitForSeconds(timingSpawn[spawnedEnemies]);
-            Debug.Log("Toca spawnear");
-            var enemy = Instantiate(enemigosASpawnear[spawnedEnemies], Vector3.zero, Quaternion.identity);
-            List<Transform> pos = new List<Transform>(paths[spawnedEnemies].GetComponentsInChildren<Transform>());
-            enemy.GetComponent<EnemyController>().directions = pos;
-            enemy.GetComponent<EnemyController>().ActivateEnemy();
-            spawnedEnemies++;
-            StartCoroutine(Spawn());
-        }
-        yield return null;
-    }
-    */
 }
