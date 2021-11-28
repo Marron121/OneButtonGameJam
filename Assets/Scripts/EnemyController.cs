@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Moving()
     {
-        while (true){Move();}
+        while (true){Move(); yield return null;}
     }
 
     private IEnumerator Animation(int i)

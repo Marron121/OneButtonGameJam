@@ -10,9 +10,13 @@ public class WaypointController : MonoBehaviour
    public float timeToWait;
    public bool shoot;
 
+   public List<EnemyController> puedeDetectar = new List<EnemyController>();
+
+   public void AddEnemy(EnemyController ec){puedeDetectar.Add(ec);}
+
    private void OnTriggerEnter2D(Collider2D other)
    {
-       if (other.GetComponent<EnemyController>())
+       if (puedeDetectar.Contains(other.GetComponent<EnemyController>()))
        {
            if (changeVelocity)
            {
