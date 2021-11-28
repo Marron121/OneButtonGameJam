@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  actualSprite: {fileID: 9101482857746467047}
+  sprites:
+  - {fileID: -433981495725691223, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
+  - {fileID: -8833407011436130389, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
   canShoot: 0
   moveSpeed: 2
   bullet: {fileID: 0}

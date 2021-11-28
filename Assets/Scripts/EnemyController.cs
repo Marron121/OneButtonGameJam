@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public List<Transform> directions;
+
+    public SpriteRenderer actualSprite;
+    public Sprite[] sprites;
     public bool canShoot;
 
     public float moveSpeed = 2f;
@@ -14,16 +17,28 @@ public class EnemyController : MonoBehaviour
     private int waypointIndex = 0;
 
     public GameObject bullet;
-    // Start is called before the first frame update
-    void Start()
+
+    public void ActivateEnemy()
     {
+        gameObject.SetActive(true);
         gameObject.transform.position = directions[0].position;
+        StartCoroutine("Moving");
+        if (!canShoot)StartCoroutine(Animation(1));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator Moving()
     {
-        Move();
+        while (true){Move();}
+    }
+
+    private IEnumerator Animation(int i)
+    {
+        yield return new WaitForSeconds(0.5f);
+        actualSprite.sprite = sprites[i];
+        i++;
+        if (i > 1) i = 0;
+        StartCoroutine(Animation(i));
+        yield return null;
     }
 
     // Method that actually make Enemy walk
@@ -61,8 +76,17 @@ public class EnemyController : MonoBehaviour
     {
         if (canShoot)
         {
+            actualSprite.sprite = sprites[1];
             Instantiate(bullet, transform.position, transform.rotation);
+            StartCoroutine("ResetSprite");
         }
+    }
+
+    private IEnumerator ResetSprite()
+    {
+        yield return new WaitForSeconds(0.5f);
+        actualSprite.sprite = sprites[0];
+        yield return null;
     }
 
 }

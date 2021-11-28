@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8833407011436130389, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
+  m_Sprite: {fileID: -6872988976039374615, guid: 64226725202afc34f939fbe2616cab40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,9 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  actualSprite: {fileID: 9101482857746467047}
+  sprites:
+  - {fileID: -6872988976039374615, guid: 64226725202afc34f939fbe2616cab40, type: 3}
+  - {fileID: 9136503116276657966, guid: 64226725202afc34f939fbe2616cab40, type: 3}
   canShoot: 1
   moveSpeed: 2
-  bullet: {fileID: 0}
+  bullet: {fileID: 3827504536629015006, guid: cc4794f75bc06f54cbc6a4191d54795b, type: 3}
 --- !u!61 &9101482857746467045
 BoxCollider2D:
   m_ObjectHideFlags: 0
