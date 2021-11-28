@@ -18,7 +18,7 @@ public class ZoneController : MonoBehaviour
     {
         if (col.gameObject.GetComponent<EnemyController>())
         {
-            Debug.Log("Enemy entered zone " + indicator);
+            //Debug.Log("Enemy entered zone " + indicator);
             enemiesInZone.Add(col.gameObject.GetComponent<EnemyController>());
         }
     }
@@ -27,7 +27,7 @@ public class ZoneController : MonoBehaviour
     {
         if (col.gameObject.GetComponent<EnemyController>())
         {
-            Debug.Log("Enemy exit zone " + indicator);
+            //Debug.Log("Enemy exit zone " + indicator);
             enemiesInZone.Remove(col.gameObject.GetComponent<EnemyController>());
         }
     }
