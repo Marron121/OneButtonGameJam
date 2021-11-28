@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<EnemyController>() != null)
+        if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
             lives --;

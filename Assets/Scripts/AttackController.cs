@@ -12,8 +12,7 @@ public class AttackController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("here.");
-        if (col.gameObject.GetComponent<EnemyController>()) Destroy(col.gameObject);
+        if (col.tag == "Enemy") Destroy(col.gameObject);
     }
     private IEnumerator CheckEnemies()
     {

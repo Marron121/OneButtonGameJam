@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
     private bool canMove = true;
 
     private int waypointIndex = 0;
+
+    public GameObject bullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +60,9 @@ public class EnemyController : MonoBehaviour
     public void ShootBullet()
     {
         if (canShoot)
-        {}
+        {
+            Instantiate(bullet, transform.position, transform.rotation);
+        }
     }
 
 }
