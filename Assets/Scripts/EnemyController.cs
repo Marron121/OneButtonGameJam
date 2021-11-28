@@ -78,6 +78,7 @@ public class EnemyController : MonoBehaviour
         {
             actualSprite.sprite = sprites[1];
             Instantiate(bullet, transform.position, transform.rotation);
+            gameObject.GetComponent<AudioSource>().Play();
             StartCoroutine("ResetSprite");
         }
     }

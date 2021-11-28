@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DoAttack()
     {
             actualState = State.Released;
+            gameObject.GetComponent<AudioSource>().Play();
             Instantiate(attackPrefab, spawnAttackPos(), Quaternion.identity);
             StopCoroutine(attack);
             attack = null;
