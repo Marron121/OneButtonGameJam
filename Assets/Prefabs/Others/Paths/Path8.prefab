@@ -49,6 +49,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955564877294538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,6 +127,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955564979006629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,6 +205,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955565271972394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -274,6 +283,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955565523261323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -349,6 +361,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955566069249621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,6 +439,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955566145910951
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -499,6 +517,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 1
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955566330097492
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -574,6 +595,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &4311955566386737601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -649,6 +673,9 @@ MonoBehaviour:
   waitHere: 0
   timeToWait: 2
   shoot: 0
+  textAppear: 0
+  text: {fileID: 0}
+  puedeDetectar: []
 --- !u!61 &7608021059177550034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -684,6 +711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9008822859091390374}
+  - component: {fileID: 4668123702120796633}
   m_Layer: 0
   m_Name: Path8
   m_TagString: Untagged
@@ -714,3 +742,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4668123702120796633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008822859091390377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedec1ec4d71ddb45bf40441ed87ac28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 7608021059177550035}
+  - {fileID: 4311955565523261322}
+  - {fileID: 4311955565271972397}
+  - {fileID: 4311955566386737600}
+  - {fileID: 4311955566330097495}
+  - {fileID: 4311955564877294541}
+  - {fileID: 4311955564979006628}
+  - {fileID: 4311955566145910950}
+  - {fileID: 4311955566069249620}

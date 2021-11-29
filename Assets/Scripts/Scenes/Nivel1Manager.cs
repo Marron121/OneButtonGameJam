@@ -10,6 +10,7 @@ public class Nivel1Manager : SceneController
     public List<float> timingSpawn;
 
     public int spawnedEnemies = 0;
+    public int killedEnemies = 0;
     float currentTime = 0.0f;
     bool canSpawn = true;
     void Update()
@@ -32,5 +33,11 @@ public class Nivel1Manager : SceneController
                 canSpawn = false;
             }
         }
+    }
+
+    public void EnemyDefeated()
+    {
+        killedEnemies++;
+        if (killedEnemies >= spawnedEnemies && !canSpawn) base.LoadScene("Nivel2");
     }
 }

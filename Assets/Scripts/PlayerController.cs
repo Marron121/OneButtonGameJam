@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     GameObject attackPrefab = null;
-
+    public SceneController sceneController;
     public SpriteRenderer actualSprite;
 
     public Sprite[] sprites;
@@ -91,7 +91,10 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             lives --;
-            if (lives <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("DeadScreen");
+            if (lives <= 0)
+            {
+                sceneController.LoadScene("DeadScreen");
+            }
             else StartCoroutine(Damaged());
         }
     }

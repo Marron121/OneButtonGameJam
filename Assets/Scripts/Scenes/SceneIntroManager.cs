@@ -9,6 +9,7 @@ public class SceneIntroManager : SceneController
     public List<string> introductionTexts;
 
     public int textNumber;
+    public string scene;
 
     public Text textOnScreen;
 
@@ -27,7 +28,7 @@ public class SceneIntroManager : SceneController
         }
         else
         {
-            base.LoadScene("Tutorial");
+            base.LoadScene(scene);
         }
     }
 }

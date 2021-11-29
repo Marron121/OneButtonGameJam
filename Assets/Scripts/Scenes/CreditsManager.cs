@@ -27,7 +27,7 @@ public class CreditsManager : SceneController
     {
         if (actualText > texts.Count-1)
         {
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(13.0f);
             base.LoadScene("StartScene");
         }
         else
@@ -36,7 +36,12 @@ public class CreditsManager : SceneController
             StartCoroutine(MoveText(texts[actualText]));
             if (actualText == 2) StartCoroutine(FadeBackground(1.0f, 1.0f, backgrounds[1]));
             if (actualText == 3) StartCoroutine(FadeBackground(1.0f, 1.0f, backgrounds[2]));
-            
+            if (actualText == 5) StartCoroutine(FadeBackground(1.0f, 1.0f, backgrounds[3]));
+            if (actualText == 9)
+            {
+                StartCoroutine(FadeBackground(1.0f, 1.0f, backgrounds[4]));
+                speed = 50;
+            }
             actualText++;
             yield return new WaitForSeconds(4.0f);
             StartCoroutine(DisplayMessage());

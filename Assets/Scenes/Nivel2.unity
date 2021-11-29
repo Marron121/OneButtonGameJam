@@ -533,20 +533,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introductionTexts:
-  - A long time ago, in a world filled with dangers and dread...
-  - 'Two men managed to find each other, even when they were from separate worlds:'
-  - One born in gracious light, while the other appeared surrounded by darkness.
-  - 'They were supossed to hate each other: they were mortal enemies, sworn to destroy
-    themselves in battle.'
-  - But instead... they soon found they could not live one with the other.
-  - Hiding for millenia, they lived happy lives... but the world would give them
-    one last string of bad luck.
-  - 'They could not live without each other: so when the one born in light fell against
-    a very dangerous disease...'
-  - The one from the darkness swore to save him, taking him to the only place that
-    could.
+  - They reach their destination, but much to his dismay their enemies are far more
+    powerful
+  - Even so, hope is in his heart, and that's why...
+  - The dark one will fight until his bitter end, protecting his partner in the hope
+    he makes it out okay.
   textNumber: 0
-  scene: Tutorial
+  scene: Nivel3
   textOnScreen: {fileID: 1079763964}
 --- !u!4 &1733203958
 Transform:

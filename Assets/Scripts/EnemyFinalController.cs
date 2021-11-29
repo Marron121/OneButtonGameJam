@@ -2,30 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyFinalController : MonoBehaviour
 {
-    public List<Transform> directions;
 
     public SpriteRenderer actualSprite;
     public Sprite[] sprites;
-    public bool canShoot;
 
-    public float moveSpeed = 2f;
+    public float moveSpeed = 3f;
 
     private bool canMove = true;
 
     private int waypointIndex = 0;
-
-    public GameObject bullet;
     string sceneName;
 
     public void ActivateEnemy()
     {
         gameObject.SetActive(true);
-        gameObject.transform.position = directions[0].position;
         sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         StartCoroutine("Moving");
-        if (!canShoot)StartCoroutine(Animation(1));
+        StartCoroutine(Animation(1));
     }
 
     private IEnumerator Moving()
@@ -46,20 +41,7 @@ public class EnemyController : MonoBehaviour
     // Method that actually make Enemy walk
     private void Move()
     {
-        if (waypointIndex <= directions.Count - 1 && canMove)
-        {
-            transform.position = Vector2.MoveTowards(transform.position,
-               directions[waypointIndex].transform.position,
-               moveSpeed * Time.deltaTime);
-            if (transform.position == directions[waypointIndex].transform.position)
-            {
-                waypointIndex += 1;
-            }
-        }
-        else if (waypointIndex > directions.Count -1)
-        {
-            Destroy(this.gameObject);
-        }
+        transform.position -= new Vector3(0, moveSpeed*Time.deltaTime, 0);
     }
 
     public void StopMovement(float t)
@@ -74,30 +56,10 @@ public class EnemyController : MonoBehaviour
         canMove = true;
     }
 
-    public void ShootBullet()
-    {
-        if (canShoot)
-        {
-            actualSprite.sprite = sprites[1];
-            Instantiate(bullet, transform.position, transform.rotation);
-            gameObject.GetComponent<AudioSource>().Play();
-            StartCoroutine("ResetSprite");
-        }
-    }
-
     private IEnumerator ResetSprite()
     {
         yield return new WaitForSeconds(0.5f);
         actualSprite.sprite = sprites[0];
         yield return null;
     }
-
-    private void OnDestroy()
-    {
-        if (sceneName == "Nivel1")
-        {
-            FindObjectOfType<Nivel1Manager>().EnemyDefeated();
-        }
-    }
-
 }
