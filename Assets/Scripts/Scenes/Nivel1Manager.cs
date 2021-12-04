@@ -38,6 +38,7 @@ public class Nivel1Manager : SceneController
     public void EnemyDefeated()
     {
         killedEnemies++;
+        Debug.LogError(killedEnemies);
         if (killedEnemies >= spawnedEnemies && !canSpawn) base.LoadScene("Nivel2");
     }
 }

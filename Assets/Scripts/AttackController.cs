@@ -9,7 +9,7 @@ public class AttackController : MonoBehaviour
     void Start()
     {
         currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        StartCoroutine(CheckEnemies());
+        StartCoroutine(Despawn());
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -18,20 +18,15 @@ public class AttackController : MonoBehaviour
         {
             Destroy(col.gameObject);
             if (currentScene == "Tutorial") FindObjectOfType<TutoManager>().EnemyKilled();
+            else if (currentScene == "Nivel1" && col.GetComponent<EnemyController>() != null)
+            {
+                FindObjectOfType<Nivel1Manager>().EnemyDefeated();
+            }
         }
 
     }
-    private IEnumerator CheckEnemies()
+    private IEnumerator Despawn()
     {
-        /*
-        Collider2D [] colliders = new Collider2D[3];
-        this.GetComponent<BoxCollider2D>().GetContacts(colliders);
-        foreach(Collider2D col in colliders)
-        {
-            Debug.Log(col);
-            if (col != null && col.gameObject.GetComponent<EnemyController>()) Destroy(col);
-        }
-        */
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }

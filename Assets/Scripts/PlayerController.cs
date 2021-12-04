@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     State actualState;
     [SerializeField]
-    float timeToCharge = 1.0f;
+    float timeToCharge = 0.5f;
     int range = 0;
 
     [SerializeField]

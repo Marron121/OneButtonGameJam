@@ -592,7 +592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hold left click 2 seconds for attack in middle range
+  m_Text: Hold left click 1 second for attack in middle range
 --- !u!222 &1023047724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1700,7 +1700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hold left click 3 seconds for attack in far range
+  m_Text: Hold left click 1.5 seconds for attack in far range
 --- !u!222 &1844947681
 CanvasRenderer:
   m_ObjectHideFlags: 0

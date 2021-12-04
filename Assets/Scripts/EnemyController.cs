@@ -58,7 +58,8 @@ public class EnemyController : MonoBehaviour
         }
         else if (waypointIndex > directions.Count -1)
         {
-            Destroy(this.gameObject);
+            EnemyDead();
+            Destroy(gameObject);
         }
     }
 
@@ -91,13 +92,11 @@ public class EnemyController : MonoBehaviour
         actualSprite.sprite = sprites[0];
         yield return null;
     }
-
-    private void OnDestroy()
+    private void EnemyDead()
     {
-        if (sceneName == "Nivel1")
-        {
-            FindObjectOfType<Nivel1Manager>().EnemyDefeated();
-        }
+        Nivel1Manager lvl1Man = null;
+        lvl1Man = FindObjectOfType<Nivel1Manager>();
+        if (lvl1Man != null) lvl1Man.EnemyDefeated();
     }
 
 }
