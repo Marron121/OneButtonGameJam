@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadingBackground: {fileID: 793042909}
-  fadingTime: 0.05
+  fadingTime: 0.5
 --- !u!114 &1843579743
 MonoBehaviour:
   m_ObjectHideFlags: 0
