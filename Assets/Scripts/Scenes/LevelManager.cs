@@ -60,4 +60,7 @@ public class LevelManager : MonoBehaviour
     {
         StartCoroutine(NextSceneWithFadeIn(n));
     }
+
+    public virtual void EnemyKilled(){}
+    public virtual void PlayerKilled(){}
 }
