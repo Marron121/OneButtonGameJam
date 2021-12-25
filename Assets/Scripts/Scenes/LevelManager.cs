@@ -13,6 +13,10 @@ public class LevelManager : MonoBehaviour
 
     bool isFadingOut = false;
     bool isFadingIn = false;
+
+    [Header("Combat")]
+    protected List<GameObject> _enemies;
+    protected List<float> _spawnTimes;
     // Start is called before the first frame update
     virtual protected void Start()
     {
@@ -43,7 +47,6 @@ public class LevelManager : MonoBehaviour
         while (fadingBackground.color.a > 0.0f)
         {
             fadingBackground.color -= new Color(0,0,0, fadingTime*Time.deltaTime);
-            //Debug.Log(fadingBackground.color);
             yield return null;
         }
         isFadingOut = false;
