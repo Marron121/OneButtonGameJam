@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IntroductionManager : LevelManager
+public class OnlyTextLevelManager : LevelManager
 {
     [Header("Text")]
     [SerializeField]
@@ -11,6 +11,8 @@ public class IntroductionManager : LevelManager
     private List<string> texts;
     [SerializeField]
     private Text textOnScreen;
+    [SerializeField]
+    private string nextLevel;
     private int textNumber;
 
     protected override void Start()
@@ -29,7 +31,7 @@ public class IntroductionManager : LevelManager
         }
         else
         {
-            base.LoadScene("Tutorial");
+            base.LoadScene(nextLevel);
         }
     }
 }

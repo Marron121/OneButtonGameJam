@@ -454,8 +454,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1733203959}
-        m_TargetAssemblyTypeName: IntroductionManager, Assembly-CSharp
+      - m_Target: {fileID: 1733203957}
+        m_TargetAssemblyTypeName: OnlyTextLevelManager, Assembly-CSharp
         m_MethodName: NextLine
         m_Mode: 1
         m_Arguments:
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 1731017806}
   - component: {fileID: 1731017807}
   m_Layer: 5
-  m_Name: Image
+  m_Name: IntroOutro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -588,7 +588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733203958}
-  - component: {fileID: 1733203959}
+  - component: {fileID: 1733203957}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -596,21 +596,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1733203958
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733203956}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2763385, y: 0.86966926, z: -44.321327}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1733203959
+--- !u!114 &1733203957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -619,7 +605,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733203956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b4302c61b816f34fbe27b4c7b72bd1e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca60f437ffaf68e45be85bda40d197e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadingBackground: {fileID: 1731017807}
@@ -638,6 +624,21 @@ MonoBehaviour:
   - The one from the darkness swore to save him, taking him to the only place that
     could.
   textOnScreen: {fileID: 1079763964}
+  nextLevel: Tutorial
+--- !u!4 &1733203958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733203956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2763385, y: 0.86966926, z: -44.321327}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831817674
 GameObject:
   m_ObjectHideFlags: 0
