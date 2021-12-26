@@ -28,6 +28,8 @@ public class PlayerManager : MonoBehaviour
 
     //Others
     private Coroutine attack;
+    [SerializeField]
+    private LevelManager currentLevelManager;
 
 
     // Start is called before the first frame update
@@ -71,7 +73,8 @@ public class PlayerManager : MonoBehaviour
     {
         StopCoroutine(LoadAttack());
         gameObject.GetComponent<AudioSource>().Play();
-        Instantiate(attackPrefab, spawnAttackPos(), Quaternion.identity);
+        GameObject atk = Instantiate(attackPrefab, spawnAttackPos(), Quaternion.identity);
+        atk.GetComponent<AttackController>().LevelManager = currentLevelManager;
         StopCoroutine(attack);
         attack = null;
         rangeOfAttack = 0;

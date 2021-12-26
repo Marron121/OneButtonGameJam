@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
-    public string currentScene;
+    [SerializeField]
+    private LevelManager levelManager;
+    public LevelManager LevelManager
+    {
+        set{levelManager = value;}
+    }
     // Start is called before the first frame update
     void Start()
     {
-        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         StartCoroutine(Despawn());
     }
 
@@ -17,11 +21,7 @@ public class AttackController : MonoBehaviour
         if (col.tag == "Enemy" && !col.GetComponent<EnemyFinalController>())
         {
             Destroy(col.gameObject);
-            if (currentScene == "Tutorial") FindObjectOfType<TutoManager>().EnemyKilled();
-            else if (currentScene == "Nivel1" && col.GetComponent<EnemyController>() != null)
-            {
-                FindObjectOfType<Nivel1Manager>().EnemyDefeated();
-            }
+            levelManager.EnemyKilled();
         }
 
     }

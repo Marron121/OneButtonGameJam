@@ -17,8 +17,15 @@ public class LevelManager : MonoBehaviour
     bool loading = false;
 
     [Header("Combat")]
-    protected List<GameObject> _enemies;
-    protected List<float> _spawnTimes;
+    [SerializeField]
+    protected List<GameObject> enemies;
+    [SerializeField]
+    protected List<float> spawnTimes;
+
+    [SerializeField]
+    protected List<GameObject> paths;
+
+    protected int killedEnemies = 0;
     // Start is called before the first frame update
     virtual protected void Start()
     {

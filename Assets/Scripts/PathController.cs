@@ -6,7 +6,7 @@ public class PathController : MonoBehaviour
 {
     public List<WaypointController> waypoints = new List<WaypointController>();
 
-    public void AssignEnemyToWaypoints(EnemyController ec)
+    public void AssignEnemyToWaypoints(EnemyManager ec)
     {
         foreach (WaypointController script in waypoints)
         {

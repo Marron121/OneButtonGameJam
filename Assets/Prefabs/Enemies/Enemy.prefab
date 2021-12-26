@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9101482857746467046}
   - component: {fileID: 9101482857746467047}
-  - component: {fileID: 9101482857746467044}
   - component: {fileID: 9101482857746467045}
   - component: {fileID: 9101482857746467042}
   - component: {fileID: 2477891481473975710}
+  - component: {fileID: 1884338886590636281}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -86,26 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9101482857746467044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9101482857746467043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4767cab010bc56849a5d4a3128b1b4d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directions: []
-  actualSprite: {fileID: 9101482857746467047}
-  sprites:
-  - {fileID: -433981495725691223, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
-  - {fileID: -8833407011436130389, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
-  canShoot: 0
-  moveSpeed: 2
-  bullet: {fileID: 0}
 --- !u!61 &9101482857746467045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -249,3 +229,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1884338886590636281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101482857746467043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b2e2603bd89bb24bb54db9dac8f4f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions: []
+  waypointIndex: 0
+  moveSpeed: 2
+  actSprite: {fileID: 9101482857746467047}
+  sprites:
+  - {fileID: -433981495725691223, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
+  - {fileID: -8833407011436130389, guid: d67d57897283a1f4bb549e16054b6ef6, type: 3}
+  canShoot: 0
+  canMove: 1
+  bullet: {fileID: 0}
+  levelManager: {fileID: 0}

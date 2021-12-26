@@ -16,25 +16,25 @@ public class WaypointController : MonoBehaviour
 
    public GameObject text;
 
-   public List<EnemyController> puedeDetectar = new List<EnemyController>();
+   public List<EnemyManager> puedeDetectar = new List<EnemyManager>();
 
-   public void AddEnemy(EnemyController ec){puedeDetectar.Add(ec);}
+   public void AddEnemy(EnemyManager ec){puedeDetectar.Add(ec);}
 
    private void OnTriggerEnter2D(Collider2D other)
    {
-       if (puedeDetectar.Contains(other.GetComponent<EnemyController>()))
+       if (puedeDetectar.Contains(other.GetComponent<EnemyManager>()))
        {
            if (changeVelocity)
            {
-               other.GetComponent<EnemyController>().moveSpeed = newVelocity;
+               other.GetComponent<EnemyManager>().MoveSpeed = newVelocity;
            }
            if (waitHere)
            {
-               other.GetComponent<EnemyController>().StopMovement(timeToWait);
+               other.GetComponent<EnemyManager>().StopMovement(timeToWait);
            }
            if(shoot)
            {
-               other.GetComponent<EnemyController>().ShootBullet();
+               other.GetComponent<EnemyManager>().ShootBullet();
            }
            if(textAppear) text.SetActive(true);
        }

@@ -24,7 +24,7 @@ public class Nivel1Manager : SceneController
             List<Transform> pos = new List<Transform>(paths[spawnedEnemies].GetComponentsInChildren<Transform>());
             pos.RemoveAt(0);
             enemy.GetComponent<EnemyController>().directions = pos;
-            paths[spawnedEnemies].GetComponent<PathController>().AssignEnemyToWaypoints(enemy.GetComponent<EnemyController>());
+            paths[spawnedEnemies].GetComponent<PathController>().AssignEnemyToWaypoints(enemy.GetComponent<EnemyManager>());
             enemy.GetComponent<EnemyController>().ActivateEnemy();
             spawnedEnemies++;
             if(spawnedEnemies >= enemigosASpawnear.Count)

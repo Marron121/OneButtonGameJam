@@ -37,7 +37,15 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     protected GameObject bullet;
 
-    virtual protected void ActivateEnemy()
+    [SerializeField]
+    protected LevelManager levelManager;
+
+    public LevelManager LevelManager
+    {
+        get{return levelManager;}
+        set{levelManager = value;}
+    }
+    public void ActivateEnemy()
     {
         gameObject.SetActive(true);
         gameObject.transform.position = directions[0].position;
@@ -75,7 +83,7 @@ public class EnemyManager : MonoBehaviour
         StartCoroutine(Animation(i));
     }
 
-    virtual protected void StopMovement(float t)
+    public void StopMovement(float t)
     {
         StartCoroutine(StopForATime(t));
     }
@@ -87,7 +95,7 @@ public class EnemyManager : MonoBehaviour
         canMove = true;
     }
 
-    virtual protected void ShootBullet()
+    public void ShootBullet()
     {
         if (canShoot)
         {
