@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Transitions")]
     [SerializeField]
-    Image fadingBackground;
+    protected Image fadingBackground;
     [SerializeField]
     float fadingTime = 0.5f;
 
