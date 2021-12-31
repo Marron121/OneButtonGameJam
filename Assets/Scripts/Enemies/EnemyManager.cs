@@ -69,6 +69,7 @@ public class EnemyManager : MonoBehaviour
             }
             else if (waypointIndex > directions.Count - 1)
             {
+                if (levelManager != null) levelManager.EnemyKilled();
                 Destroy(gameObject);
             }
         }

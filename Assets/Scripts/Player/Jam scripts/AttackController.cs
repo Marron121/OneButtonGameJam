@@ -21,7 +21,7 @@ public class AttackController : MonoBehaviour
         if (col.tag == "Enemy" && !col.GetComponent<EnemyFinalController>())
         {
             Destroy(col.gameObject);
-            levelManager.EnemyKilled();
+            if (col.GetComponent<EnemyManager>()) levelManager.EnemyKilled();
         }
 
     }

@@ -31,6 +31,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private LevelManager currentLevelManager;
 
+    private bool dying = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -86,11 +88,13 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
+            if (other.GetComponent<EnemyManager>()) currentLevelManager.EnemyKilled();
             Destroy(other.gameObject);
             lives--;
-            if (lives <= 0)
+            if (lives <= 0 && !dying)
             {
-                //sceneController.LoadScene("DeadScreen");
+                dying = true;
+                currentLevelManager.LoadScene("DeadScreen");
             }
             else StartCoroutine(Damaged());
         }

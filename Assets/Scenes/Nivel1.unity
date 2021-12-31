@@ -424,6 +424,8 @@ MonoBehaviour:
   - {fileID: 1124861332}
   - {fileID: 1633091579}
   nextLevel: Nivel2
+  canSpawn: 1
+  spawnedEnemies: 0
 --- !u!1 &548274408
 GameObject:
   m_ObjectHideFlags: 0

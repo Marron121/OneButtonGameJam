@@ -7,7 +7,9 @@ public class OnlyCombatLevelManager : LevelManager
     [SerializeField]
     private string nextLevel;
     private float currentTime = 0.0f;
+    [SerializeField]
     private bool canSpawn = true;
+    [SerializeField]
     private int spawnedEnemies = 0;
 
     protected override void Update()
@@ -20,7 +22,10 @@ public class OnlyCombatLevelManager : LevelManager
                 SpawnEnemy();
                 spawnedEnemies++;
                 if(spawnedEnemies >= enemies.Count)
+                {
+                    //Debug.Log("No more enemies left!");
                     canSpawn = false;
+                }
             }
                 
         }
@@ -28,18 +33,19 @@ public class OnlyCombatLevelManager : LevelManager
 
     private void SpawnEnemy()
     {
-        var enemy = Instantiate(enemies[killedEnemies], Vector3.zero, Quaternion.identity);
-        List<Transform> pos = new List<Transform>(paths[killedEnemies].GetComponentsInChildren<Transform>());
+        var enemy = Instantiate(enemies[spawnedEnemies], Vector3.zero, Quaternion.identity);
+        List<Transform> pos = new List<Transform>(paths[spawnedEnemies].GetComponentsInChildren<Transform>());
         pos.RemoveAt(0);
         enemy.GetComponent<EnemyManager>().Directions = pos;
         enemy.GetComponent<EnemyManager>().LevelManager = this;
-        paths[killedEnemies].GetComponent<PathController>().AssignEnemyToWaypoints(enemy.GetComponent<EnemyManager>());
+        paths[spawnedEnemies].GetComponent<PathController>().AssignEnemyToWaypoints(enemy.GetComponent<EnemyManager>());
         enemy.GetComponent<EnemyManager>().ActivateEnemy();
     }
 
     public override void EnemyKilled()
     {
         killedEnemies++;
+        //Debug.Log("killedEnemies("+killedEnemies+"), spawnedEnemies("+spawnedEnemies+")");
         if (killedEnemies >= spawnedEnemies && !canSpawn) base.LoadScene(nextLevel);
     }
 }
