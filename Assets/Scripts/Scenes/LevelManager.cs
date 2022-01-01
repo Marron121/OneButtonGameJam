@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     protected Image fadingBackground;
     [SerializeField]
-    float fadingTime = 0.5f;
+    protected float fadingTime = 0.5f;
 
     bool isFadingOut = false;
     bool isFadingIn = false;
@@ -79,4 +79,5 @@ public class LevelManager : MonoBehaviour
 
     public virtual void EnemyKilled(){}
     public virtual void PlayerKilled(){}
+    public virtual void SpecialEffect(){}
 }

@@ -44,7 +44,9 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if(!dying)
+        {
+if (Input.GetMouseButton(0))
         {
             if (attack is null) attack = StartCoroutine("LoadAttack");
         }
@@ -53,6 +55,8 @@ public class PlayerManager : MonoBehaviour
         {
             StartCoroutine(DoAttack());
         }
+        }
+        
     }
     private IEnumerator LoadAttack()
     {
@@ -94,7 +98,7 @@ public class PlayerManager : MonoBehaviour
             if (lives <= 0 && !dying)
             {
                 dying = true;
-                currentLevelManager.LoadScene("DeadScreen");
+                currentLevelManager.PlayerKilled();
             }
             else StartCoroutine(Damaged());
         }

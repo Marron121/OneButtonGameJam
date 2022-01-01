@@ -11,8 +11,9 @@ public class WaypointController : MonoBehaviour
    public bool waitHere = false;
    public float timeToWait;
    public bool shoot;
-
    public bool textAppear = false;
+
+   public bool specialEffect = false;
 
    public GameObject text;
 
@@ -36,7 +37,14 @@ public class WaypointController : MonoBehaviour
            {
                other.GetComponent<EnemyManager>().ShootBullet();
            }
-           if(textAppear) text.SetActive(true);
+           if(textAppear)
+           {
+               text.SetActive(true);
+           }
+           if(specialEffect)
+           {
+               other.GetComponent<EnemyManager>().LevelManager.SpecialEffect();
+           }
        }
    }
 }

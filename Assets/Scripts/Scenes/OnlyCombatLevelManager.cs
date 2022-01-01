@@ -5,17 +5,28 @@ using UnityEngine;
 public class OnlyCombatLevelManager : LevelManager
 {
     [SerializeField]
-    private string nextLevel;
+    protected string nextLevel;
     private float currentTime = 0.0f;
     [SerializeField]
-    private bool canSpawn = true;
+    protected bool canSpawn = true;
     [SerializeField]
-    private int spawnedEnemies = 0;
+    protected int spawnedEnemies = 0;
+
+    [SerializeField]
+    AudioSource audio;
+    [SerializeField]
+    bool startedSong = false;
 
     protected override void Update()
     {
         if (!fadingBackground.raycastTarget)
         {
+            if (!startedSong)
+            {
+                audio.Play();
+                startedSong = true;
+            }
+            
             currentTime += Time.deltaTime;
             if(canSpawn && currentTime >= spawnTimes[spawnedEnemies])
             {
@@ -47,5 +58,12 @@ public class OnlyCombatLevelManager : LevelManager
         killedEnemies++;
         //Debug.Log("killedEnemies("+killedEnemies+"), spawnedEnemies("+spawnedEnemies+")");
         if (killedEnemies >= spawnedEnemies && !canSpawn) base.LoadScene(nextLevel);
+    }
+
+    public override void PlayerKilled()
+    {
+        canSpawn = false;
+        audio.Stop();
+        base.LoadScene("DeadScreen");
     }
 }

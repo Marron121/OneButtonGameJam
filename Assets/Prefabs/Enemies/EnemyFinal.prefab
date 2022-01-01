@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 419709017396183269}
   - component: {fileID: 419709017396183266}
   - component: {fileID: 3196982901348934829}
-  - component: {fileID: 8101122686609759046}
+  - component: {fileID: 2533596760742920536}
   m_Layer: 0
   m_Name: EnemyFinal
   m_TagString: Enemy
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419709017396183267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 2.23, z: 0}
+  m_LocalPosition: {x: 0, y: 2.23, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,7 +144,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac2d8f391745e4e4fae4ac32183330ef, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -229,7 +229,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8101122686609759046
+--- !u!114 &2533596760742920536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,11 +238,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 419709017396183267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bba27e14e8ef8c46960184596357c66, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b2e2603bd89bb24bb54db9dac8f4f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualSprite: {fileID: 419709017396183271}
+  directions: []
+  waypointIndex: 0
+  moveSpeed: 1
+  actSprite: {fileID: 419709017396183271}
   sprites:
   - {fileID: -6872988976039374615, guid: 64226725202afc34f939fbe2616cab40, type: 3}
   - {fileID: 9136503116276657966, guid: 64226725202afc34f939fbe2616cab40, type: 3}
-  moveSpeed: 1
+  canShoot: 0
+  canMove: 1
+  bullet: {fileID: 0}
+  levelManager: {fileID: 0}

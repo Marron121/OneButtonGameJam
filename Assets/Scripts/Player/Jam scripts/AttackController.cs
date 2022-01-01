@@ -18,7 +18,7 @@ public class AttackController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Enemy" && !col.GetComponent<EnemyFinalController>())
+        if (col.tag == "Enemy" && !col.name.Contains("EnemyFinal"))
         {
             Destroy(col.gameObject);
             if (col.GetComponent<EnemyManager>()) levelManager.EnemyKilled();
