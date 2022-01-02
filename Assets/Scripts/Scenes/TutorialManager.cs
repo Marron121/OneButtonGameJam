@@ -55,7 +55,7 @@ public class TutorialManager : LevelManager
                 eventos[3] = 0;
                 Destroy(texts[killedEnemies - 1]);
                 break;
-            case 4:
+            case 5:
                 base.LoadScene("Nivel1");
                 break;
         }

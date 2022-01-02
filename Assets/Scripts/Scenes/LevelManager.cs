@@ -16,6 +16,10 @@ public class LevelManager : MonoBehaviour
 
     bool loading = false;
 
+    [Header("Player")]
+    [SerializeField]
+    Animator player; 
+
     [Header("Combat")]
     [SerializeField]
     protected List<GameObject> enemies;
@@ -24,12 +28,12 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     protected List<GameObject> paths;
-
     protected int killedEnemies = 0;
     // Start is called before the first frame update
     virtual protected void Start()
     {
         StartCoroutine(FadeOut());
+        if (player != null) StartCoroutine(EnterPlayer());
     }
 
     virtual protected void Update()
@@ -39,6 +43,7 @@ public class LevelManager : MonoBehaviour
 
     virtual protected IEnumerator FadeIn()
     {
+        if (player != null) StartCoroutine(LeavePlayer());
         isFadingIn = true;
         while (fadingBackground.color.a < 1.0f)
         {
@@ -49,6 +54,17 @@ public class LevelManager : MonoBehaviour
         yield return null;
     }
 
+    private IEnumerator EnterPlayer()
+    {
+        yield return new WaitWhile(() => isFadingOut);
+        player.SetBool("enter", true);
+    }
+
+    private IEnumerator LeavePlayer()
+    {
+        player.SetBool("leave", true);
+        yield return null;
+    }
     virtual protected IEnumerator FadeOut()
     {
         isFadingOut = true;
