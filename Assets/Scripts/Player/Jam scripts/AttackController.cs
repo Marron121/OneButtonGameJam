@@ -21,7 +21,7 @@ public class AttackController : MonoBehaviour
         if (col.tag == "Enemy" && !col.name.Contains("EnemyFinal"))
         {
             Destroy(col.gameObject);
-            if (col.GetComponent<EnemyManager>()) levelManager.EnemyKilled();
+            if (col.GetComponent<EnemyManager>() || col.GetComponent<BulletController>().CountAsKill) levelManager.EnemyKilled();
         }
 
     }
