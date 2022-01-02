@@ -309,6 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadingBackground: {fileID: 242021877}
   fadingTime: 0.5
+  player: {fileID: 2728842689909085884}
   enemies:
   - {fileID: 9101482857746467043, guid: 66c58cf42e7b90b4a82faac0374a4629, type: 3}
   - {fileID: 9101482857746467043, guid: 66c58cf42e7b90b4a82faac0374a4629, type: 3}
@@ -1465,7 +1466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2728842689074771835, guid: 9319871cbbcd9e64aa5634872d09dde7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.46
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 2728842689074771835, guid: 9319871cbbcd9e64aa5634872d09dde7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1489,3 +1490,8 @@ PrefabInstance:
       objectReference: {fileID: 310351537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9319871cbbcd9e64aa5634872d09dde7, type: 3}
+--- !u!95 &2728842689909085884 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4325305497610365815, guid: 9319871cbbcd9e64aa5634872d09dde7, type: 3}
+  m_PrefabInstance: {fileID: 2728842689909085883}
+  m_PrefabAsset: {fileID: 0}
