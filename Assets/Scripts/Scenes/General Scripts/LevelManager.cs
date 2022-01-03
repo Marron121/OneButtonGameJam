@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     protected float fadingTime = 0.5f;
 
     bool isFadingOut = false;
-    bool isFadingIn = false;
+    protected bool isFadingIn = false;
 
     bool loading = false;
 
