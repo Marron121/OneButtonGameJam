@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttackController : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class AttackController : MonoBehaviour
     {
         set{levelManager = value;}
     }
+    [SerializeField]
+    private AudioSource audio;
+    [SerializeField]
+    private BoxCollider2D collider;
+    [SerializeField]
+    private SpriteRenderer image;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +35,9 @@ public class AttackController : MonoBehaviour
     private IEnumerator Despawn()
     {
         yield return new WaitForSeconds(0.1f);
+        collider.enabled = false;
+        image.sprite = null;
+        yield return new WaitForSeconds(audio.clip.length-0.1f);
         Destroy(gameObject);
     }
 }

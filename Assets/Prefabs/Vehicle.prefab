@@ -183,6 +183,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2728842689074771835}
     m_Modifications:
     - target: {fileID: 592786197508775190, guid: 5404bcd2082876d49addc3d4be7dd3ad, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 113de2d833bc0fc46badd6d382c3fe03, type: 3}
+    - target: {fileID: 592786197508775190, guid: 5404bcd2082876d49addc3d4be7dd3ad, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 1195514818801998143, guid: d8d0691131ecc074ba0721e1b2aaedc3, type: 2}
@@ -252,14 +256,6 @@ PrefabInstance:
       objectReference: {fileID: 638857912346195476, guid: e82e5f42d0ed9aa4b83eedfe91cd817b, type: 3}
     - target: {fileID: 1340148592922561599, guid: 5404bcd2082876d49addc3d4be7dd3ad, type: 3}
       propertyPath: sceneController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7348645511765620205, guid: 5404bcd2082876d49addc3d4be7dd3ad, type: 3}
-      propertyPath: firstZone
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7348645511765620205, guid: 5404bcd2082876d49addc3d4be7dd3ad, type: 3}
-      propertyPath: currentLevelManager
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []

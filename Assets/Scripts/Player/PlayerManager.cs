@@ -26,6 +26,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private LifeCounterController lifeCounter;
 
+    [Header("Sounds")]
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip playerDie;
     //Others
     private Coroutine attack;
     [SerializeField]
@@ -78,7 +83,6 @@ if (Input.GetMouseButton(0))
     private IEnumerator DoAttack()
     {
         StopCoroutine(LoadAttack());
-        gameObject.GetComponent<AudioSource>().Play();
         GameObject atk = Instantiate(attackPrefab, spawnAttackPos(), Quaternion.identity);
         atk.GetComponent<AttackController>().LevelManager = currentLevelManager;
         StopCoroutine(attack);
@@ -99,9 +103,11 @@ if (Input.GetMouseButton(0))
             {
                 dying = true;
                 currentLevelManager.PlayerKilled();
+                audioSource.clip = playerDie;
             }
             else StartCoroutine(Damaged());
-
+            
+            audioSource.Play();
             if (lifeCounter != null) lifeCounter.HeartBroken(lives);
         }
     }

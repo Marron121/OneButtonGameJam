@@ -120,8 +120,8 @@ AudioSource:
   m_GameObject: {fileID: 1340148592922561592}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95db0db8f13049c4a937fb242bb0cac7, type: 3}
+  OutputAudioMixerGroup: {fileID: 1195514818801998143, guid: d8d0691131ecc074ba0721e1b2aaedc3, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 113de2d833bc0fc46badd6d382c3fe03, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -230,4 +230,6 @@ MonoBehaviour:
   firstZone: {fileID: 0}
   lives: 3
   lifeCounter: {fileID: 0}
+  audioSource: {fileID: 592786197508775190}
+  playerDie: {fileID: 8300000, guid: 835e66ae600188b4792fa75d66933e93, type: 3}
   currentLevelManager: {fileID: 0}
