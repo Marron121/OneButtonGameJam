@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private int lives = 3;
     [SerializeField]
-    private GameObject lifeCounter;
+    private LifeCounterController lifeCounter;
 
     //Others
     private Coroutine attack;
@@ -101,6 +101,8 @@ if (Input.GetMouseButton(0))
                 currentLevelManager.PlayerKilled();
             }
             else StartCoroutine(Damaged());
+
+            if (lifeCounter != null) lifeCounter.HeartBroken(lives);
         }
     }
 
