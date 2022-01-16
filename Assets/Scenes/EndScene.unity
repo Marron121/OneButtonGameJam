@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The Whip\n(Extended Version)\nby Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/\n4514-the-whip-extended-version-\r"
+  m_Text: "<b>The Whip\n(Extended Version)</b>\nby Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/\n4514-the-whip-extended-version-\r"
 --- !u!222 &1184890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Attack sound from:
+  m_Text: '<b>"Sound Effects magic *Efectos de Sonido Magia*"</b>
 
     https://youtu.be/v9TF8Lu4f1c'
 --- !u!222 &575609746
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 718890142}
   - component: {fileID: 718890141}
   m_Layer: 5
-  m_Name: SFXAlas
+  m_Name: SFXAlas&Grito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,17 +688,23 @@ MonoBehaviour:
     m_FontSize: 31
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 48
+    m_MinSize: 27
+    m_MaxSize: 52
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wings sound from:
+  m_Text: '<b>"Flapping Wings Sound Effect [HD]-Audio"</b>
 
-    https://youtu.be/zXMOKSZwljg'
+    https://youtu.be/zXMOKSZwljg
+
+
+    <b>"Male
+    Pain/Hurt Sound Effects - 8 Sounds"</b>
+
+    https://youtu.be/7GDq2MKjyec'
 --- !u!222 &718890142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1321,7 +1327,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'For the Fallen
+  m_Text: '<b>For the Fallen</b>
 
     by Kevin MacLeod
 
@@ -1816,7 +1822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quimera shooting sound from:
+  m_Text: '<b>"Sonido de quimera lanzando fuego":</b>
 
     https://youtu.be/9IH67wtUybs'
 --- !u!222 &1894118772
