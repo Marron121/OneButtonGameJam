@@ -402,7 +402,7 @@ MonoBehaviour:
   - {fileID: 216419500}
   - {fileID: 1124861332}
   - {fileID: 1633091579}
-  nextLevel: Nivel1.5
+  nextLevel: Nivel2
   canSpawn: 1
   spawnedEnemies: 0
   audio: {fileID: 1783407882}
@@ -1157,7 +1157,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 9176503575816773257, guid: d8d0691131ecc074ba0721e1b2aaedc3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b9036bba031242e40885c0a1a8533725, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 82bf42adf13efcb4688c6762347d65f8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.36
   m_Pitch: 1
