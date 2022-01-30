@@ -21,6 +21,9 @@ public class DeadScreenManager : LevelManager
     [SerializeField]
     private AudioSource audio;
 
+    [SerializeField]
+    InformationHolder infoHolder;
+
     protected override void Update()
     {
         if (isFadingIn)
@@ -42,6 +45,6 @@ public class DeadScreenManager : LevelManager
             hands[1].SetActive(true);
 
         }
-        base.LoadScene(n);
+        base.LoadScene(infoHolder.currentScene);
     }
 }

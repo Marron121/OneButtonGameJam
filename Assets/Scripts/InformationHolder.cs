@@ -16,7 +16,8 @@ public class InformationHolder : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        currentScene = scene.name;
+        if (scene.name != "DeadScreen")
+            currentScene = scene.name;
     }
 
     // called when the game is terminated
