@@ -105,10 +105,12 @@ if (Input.GetMouseButton(0))
                 currentLevelManager.PlayerKilled();
                 audioSource.clip = playerDie;
             }
-            else StartCoroutine(Damaged());
-            
+            else
+            {
+                StartCoroutine(Damaged());
+            }
             audioSource.Play();
-            if (lifeCounter != null) lifeCounter.HeartBroken(lives);
+            if (lifeCounter != null && lives >= 0) lifeCounter.HeartBroken(lives);
         }
     }
 
