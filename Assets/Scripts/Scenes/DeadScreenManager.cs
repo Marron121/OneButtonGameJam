@@ -20,10 +20,7 @@ public class DeadScreenManager : LevelManager
     private List<GameObject> texts;
     [SerializeField]
     private AudioSource audio;
-
-    [SerializeField]
-    InformationHolder infoHolder;
-
+    
     protected override void Update()
     {
         if (isFadingIn)
@@ -45,6 +42,6 @@ public class DeadScreenManager : LevelManager
             hands[1].SetActive(true);
 
         }
-        base.LoadScene(infoHolder.currentScene);
+        base.LoadScene(FindObjectOfType<InformationHolder>().currentScene);
     }
 }

@@ -30,6 +30,7 @@ public class OnlyCombatLevelManager : LevelManager
             currentTime += Time.deltaTime;
             if(canSpawn && currentTime >= spawnTimes[spawnedEnemies])
             {
+                Debug.Log("enemy " + spawnedEnemies + ": " + currentTime);
                 SpawnEnemy();
                 spawnedEnemies++;
                 if(spawnedEnemies >= enemies.Count)
