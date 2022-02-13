@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class InformationHolder : MonoBehaviour
 {
     public string currentScene;
-
+    int creation;
     // called first
     void OnEnable()
     {
@@ -28,6 +28,11 @@ public class InformationHolder : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        creation = FindObjectsOfType<InformationHolder>().Length-1;
+        Debug.Log("creation: " + creation);
+        if (creation > 0)
+            DestroyImmediate(this.gameObject);
+        else
+            DontDestroyOnLoad(this.gameObject);
     }
 }
