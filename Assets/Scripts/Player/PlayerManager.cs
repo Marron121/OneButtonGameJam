@@ -36,6 +36,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private LevelManager currentLevelManager;
 
+    [SerializeField]
+    private CameraShake shake;
+
     private bool dying = false;
 
 
@@ -49,19 +52,20 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!dying)
+        if (!dying)
         {
-if (Input.GetMouseButton(0))
-        {
-            if (attack is null) attack = StartCoroutine("LoadAttack");
+            if (Input.GetMouseButton(0))
+            {
+                if (shake != null) shake.StartCharge();
+                if (attack is null) attack = StartCoroutine("LoadAttack");
+            }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                StartCoroutine(DoAttack());
+            }
         }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            StartCoroutine(DoAttack());
-        }
-        }
-        
     }
     private IEnumerator LoadAttack()
     {
@@ -89,6 +93,7 @@ if (Input.GetMouseButton(0))
         attack = null;
         rangeOfAttack = 0;
         actSprite.sprite = sprites[0];
+        if (shake != null) shake.Attack();
         yield return null;
     }
 

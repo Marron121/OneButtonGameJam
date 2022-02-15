@@ -501,6 +501,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4622217002568241468, guid: 9319871cbbcd9e64aa5634872d09dde7, type: 3}
+      propertyPath: shake
+      value: 
+      objectReference: {fileID: 1966137851}
+    - target: {fileID: 4622217002568241468, guid: 9319871cbbcd9e64aa5634872d09dde7, type: 3}
       propertyPath: firstZone
       value: 
       objectReference: {fileID: 2003529830}
@@ -2199,6 +2203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1966137850}
   - component: {fileID: 1966137849}
+  - component: {fileID: 1966137851}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -2256,6 +2261,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966137851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966137848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4862532d37e8bc54591e722e6bfdd0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1966137849}
 --- !u!1001 &2003529829
 PrefabInstance:
   m_ObjectHideFlags: 0

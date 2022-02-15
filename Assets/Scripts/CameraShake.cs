@@ -5,16 +5,24 @@ using Cinemachine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField]
-    CinemachineBasicMultiChannelPerlin shake;
+    CinemachineVirtualCamera cam;
+
+    private CinemachineBasicMultiChannelPerlin shake;
 
     private bool shaking = false;
+    Coroutine charging = null;
+    private void Start()
+    {
+        shake = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        Debug.Log(shake);
+    }
     private void Update()
     {
         if (shaking)
         {
-            float reduce = shake.m_AmplitudeGain*0.1f;
-            shake.m_AmplitudeGain -=reduce;
-            shake.m_FrequencyGain -=reduce;
+            float reduce = shake.m_AmplitudeGain * 0.05f;
+            shake.m_AmplitudeGain -= reduce;
+            shake.m_FrequencyGain -= reduce;
             if (shake.m_AmplitudeGain <= 0.1f)
             {
                 shake.m_AmplitudeGain = 0.0f;
@@ -24,17 +32,24 @@ public class CameraShake : MonoBehaviour
         }
     }
 
-    public void ChargeAttack(int augment)
+    public void StartCharge()
     {
-        shake.m_AmplitudeGain = augment;
-        shake.m_FrequencyGain = augment;
+        if (shake.m_AmplitudeGain < 0.75f)
+        {
+            shaking = false;
+            shake.m_AmplitudeGain += 0.05f;
+            shake.m_FrequencyGain += 0.05f;
+        }
     }
 
     public void Attack()
     {
-        shake.m_AmplitudeGain *=1.5f;
-        shake.m_FrequencyGain *=1.5f;
-        shaking = true;
+        if (shaking is false)
+        {
+            shake.m_AmplitudeGain = 2f;
+            shake.m_FrequencyGain = 2f;
+            shaking = true;
+        }
     }
     private void StopShake()
     {
